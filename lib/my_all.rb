@@ -2,5 +2,15 @@ require 'pry'
 
 def my_all?(collection)
   i = 0 
-  return_values
+  return_values = []
+  while i < collection.length do 
+    return_values << yield(collection[i])
+    i += 1 
+  end 
+  
+  if return_values.include?(false)
+    return false 
+  else 
+    return true 
+  end 
 end
